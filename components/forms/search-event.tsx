@@ -19,7 +19,7 @@ export default function SearchEvent() {
   const [date, setDate] = React.useState<Date>();
 
   return (
-    <form className="p-5 rounded-xl bg-primary flex items-center gap-2.5 w-full">
+    <form className="p-5 rounded-xl bg-primary flex flex-col lg:flex-row items-center gap-2.5 w-full xl:w-[1080px]">
       <Input
         className="p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground"
         placeholder="Search Event"
