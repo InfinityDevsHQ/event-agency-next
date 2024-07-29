@@ -1,3 +1,5 @@
+import EventCard from "./featured/event-card";
+
 export default function Events() {
   return (
     <section className="py-24 px-12">
@@ -8,7 +10,9 @@ export default function Events() {
             Discover more of the activities with our curated event collections
           </p>
         </div>
-        <div></div>
+        <div className="grid lg:grid-cols-4">
+          <EventCard />
+        </div>
       </div>
     </section>
   );
