@@ -1,3 +1,5 @@
+import SearchEvent from "./hero/search-event";
+
 export default function Hero() {
   return (
     <section className="hero-bg p-2.5 flex items-center justify-center">
@@ -7,6 +9,7 @@ export default function Hero() {
           An Unexpected
           <br /> City Awaits
         </h1>
+        <SearchEvent />
       </div>
     </section>
   );

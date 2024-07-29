@@ -35,6 +35,11 @@ const config = {
       lineHeight: {
         extra: "77.45px",
       },
+      colors: {
+        primary: {
+          DEFAULT: "#F8FAFC",
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
