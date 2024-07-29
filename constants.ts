@@ -46,7 +46,7 @@ export const SpotlightEvents: SpotlightEvent[] = [
     id: 3,
   },
   {
-    img_url: "/assets/events/event-3.png",
+    img_url: "/assets/events/event-4.png",
     ticket_price: null,
     date: "December 19",
     title: "Mid-Autumn Festival",

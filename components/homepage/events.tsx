@@ -1,3 +1,5 @@
+import { SpotlightEvents } from "@/constants";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import EventCard from "./featured/event-card";
 
 export default function Events() {
@@ -10,9 +12,22 @@ export default function Events() {
             Discover more of the activities with our curated event collections
           </p>
         </div>
-        <div className="grid lg:grid-cols-4">
-          <EventCard />
-        </div>
+        <Carousel>
+          <CarouselContent>
+            {SpotlightEvents.map((event) => (
+              <CarouselItem className="mx-auto lg:basis-1/3" key={event.id}>
+                <EventCard
+                  img_url={event.img_url}
+                  title={event.title}
+                  ticket_price={event.ticket_price}
+                  location={event.location}
+                  id={event.id}
+                  date={event.date}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
