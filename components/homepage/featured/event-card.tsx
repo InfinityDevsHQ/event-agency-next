@@ -7,16 +7,22 @@ export default function EventCard({
   title,
   location,
   date,
+  blackEffect = false,
 }: SpotlightEvent) {
   return (
     <article className="flex flex-col gap-5 text-secondary-foreground">
-      <Image
-        src={img_url}
-        alt="Event"
-        width={358}
-        height={222}
-        className="rounded-custom"
-      />
+      <div>
+        <div className="max-w-max relative">
+          <Image
+            src={img_url}
+            alt="Event"
+            width={358}
+            height={222}
+            className="rounded-custom"
+          />
+          <div className="bg-black/40 absolute top-0 w-full h-full rounded-custom"></div>
+        </div>
+      </div>
       <div className="flex flex-col gap-5 max-w-max">
         <h4 className="font-bold text-2xl">{title}</h4>
         <div className="flex items-center gap-2.5">

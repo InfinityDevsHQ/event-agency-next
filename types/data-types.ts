@@ -10,4 +10,5 @@ type SpotlightEvent = {
   location: string;
   ticket_price: null | number;
   id: number;
+  blackEffect?: boolean;
 };
