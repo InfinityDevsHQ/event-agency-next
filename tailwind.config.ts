@@ -38,6 +38,11 @@ const config = {
       colors: {
         primary: {
           DEFAULT: "#F8FAFC",
+          foreground: "#94A3B8",
+        },
+        secondary: {
+          DEFAULT: "#F59E0B",
+          foreground: "#020617",
         },
       },
     },
