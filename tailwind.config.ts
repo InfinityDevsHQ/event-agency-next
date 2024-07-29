@@ -45,6 +45,13 @@ const config = {
           foreground: "#020617",
         },
       },
+      spacing: {
+        85: "20.625rem",
+        75: "17.5rem",
+      },
+      borderRadius: {
+        custom: "1.25rem",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
