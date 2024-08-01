@@ -70,3 +70,41 @@ export const SpotlightEvents: SpotlightEvent[] = [
     id: 5,
   },
 ];
+export const faqs1 = [
+  {
+    question: "What is the Italian Capital of Culture?",
+    answer:
+      "Tickets are non-refundable but may be transferable. Please contact us directly for any ticket transfer requests.",
+  },
+  {
+    question: "Where can I find out more on the subject?",
+    answer: "",
+  },
+  {
+    question: "What is the Italian Capital of Culture for 2024?",
+    answer: "",
+  },
+  {
+    question: "Can dietary restrictions or allergies be accommodated?",
+    answer: "",
+  },
+];
+
+export const faqs2 = [
+  {
+    question: "Are tickets refundable or transferable?",
+    answer: "",
+  },
+  {
+    question: "Is there parking available at the venue?",
+    answer: "",
+  },
+  {
+    question: "What is the Italian Capital of Culture for 2022?",
+    answer: "",
+  },
+  {
+    question: "How can I become a sponsor for the event?",
+    answer: "",
+  },
+];
