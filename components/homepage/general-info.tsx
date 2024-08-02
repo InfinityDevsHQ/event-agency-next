@@ -17,11 +17,13 @@ const GeneralInformation = () => {
   };
 
   return (
-    <div className="px-4 py-8 md:py-16 lg:py-28 container mx-auto">
-      <h2 className="text-5xl font-bold mb-4">General Information</h2>
+    <div className="px-4 py-12 md:px-12 md:py-24">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        General Information
+      </h2>
 
       <div className="mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-2 md:gap-4">
           <div>
             {faqs1.map((faq, index) => (
               <FAQItem
