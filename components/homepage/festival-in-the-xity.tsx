@@ -17,7 +17,7 @@ export default function FestivalInTheCity() {
         </p>
         <Button
           variant={"secondary"}
-          className="lg:self-end rounded-md font-bold text-xs"
+          className="lg:self-end rounded-md font-bold text-xs w-[196px]"
         >
           FIND OUT
         </Button>

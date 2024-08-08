@@ -39,7 +39,7 @@ export default function SearchEvent() {
           <Button
             variant={"outline"}
             className={cn(
-              "p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground",
+              "p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs w-full placeholder:text-primary-foreground",
               !date && "text-primary-foreground"
             )}
           >
@@ -56,7 +56,7 @@ export default function SearchEvent() {
           />
         </PopoverContent>
       </Popover>
-      <Button variant={"secondary"} className="text-xs font-bold">
+      <Button variant={"secondary"} className="text-xs font-bold w-full">
         Search
       </Button>
     </form>

@@ -10,7 +10,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <header className="w-full relative">
+    <header className="w-full relative z-50">
       <div
         id="header"
         className="max-w-screen-2xl h-20 fixed top-0 w-full mx-auto py-5 px-4 md:px-12 flex items-center justify-between"
