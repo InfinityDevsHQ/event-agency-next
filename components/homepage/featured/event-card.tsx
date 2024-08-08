@@ -10,7 +10,7 @@ export default function EventCard({
   blackEffect = false,
 }: SpotlightEvent) {
   return (
-    <article className="flex flex-col gap-5 text-secondary-foreground">
+    <article className="flex flex-col gap-5 text-secondary-foreground w-[358px]">
       <div>
         <div className="max-w-max relative">
           <Image
@@ -18,7 +18,7 @@ export default function EventCard({
             alt="Event"
             width={400}
             height={222}
-            className="rounded-custom w-full lg:min-w-[450px]"
+            className="rounded-custom w-full lg:min-w-full"
           />
           <div className="bg-black/40 absolute top-0 w-full h-full rounded-custom"></div>
         </div>

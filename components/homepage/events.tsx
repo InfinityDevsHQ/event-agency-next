@@ -17,7 +17,10 @@ export default function Events() {
         <Carousel>
           <CarouselContent>
             {SpotlightEvents.map((event) => (
-              <CarouselItem className="mx-auto lg:basis-1/3" key={event.id}>
+              <CarouselItem
+                className="mx-auto lg:basis-[32%] gap-5"
+                key={event.id}
+              >
                 <EventCard
                   img_url={event.img_url}
                   title={event.title}
