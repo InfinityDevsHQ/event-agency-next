@@ -1,27 +1,23 @@
 "use client";
-import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
-import { SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "../ui/input";
+import { Select } from "../ui/select";
+import { SelectTrigger, SelectValue } from "../ui/select";
 import * as React from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Button } from "../ui/button";
+import { Calendar } from "../ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { cn } from "../../lib/utils";
 
 export default function SearchEvent() {
   const [date, setDate] = React.useState<Date>();
 
   return (
-    <form className="p-3 md:p-5 rounded-xl bg-primary flex flex-col md:flex-row items-center gap-2.5 min-w-[300px] sm:min-w-[550px] md:min-w-[750px] xl:w-[1080px]">
+    <form className="p-3 md:p-5 rounded-xl bg-primary grid sm:grid-cols-2 md:grid-cols-5 items-center gap-2.5 min-w-[300px] sm:min-w-[550px] md:min-w-[750px] xl:w-[1250px]">
       <Input
-        className="p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground"
+        className="p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground focus-visible:ring-1"
         placeholder="Search Event"
       />
       <Select>
@@ -39,12 +35,12 @@ export default function SearchEvent() {
           <Button
             variant={"outline"}
             className={cn(
-              "p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs w-full placeholder:text-primary-foreground",
+              "p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground justify-between",
               !date && "text-primary-foreground"
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
             {date ? format(date, "PPP") : <span>Pick a date</span>}
+            <CalendarIcon className="h-6 w-6 opacity-50 border-l border-black/30 pl-2" />
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0">
@@ -56,7 +52,11 @@ export default function SearchEvent() {
           />
         </PopoverContent>
       </Popover>
-      <Button variant={"secondary"} className="text-xs font-bold w-full">
+
+      <Button
+        variant={"secondary"}
+        className="text-xs font-bold lg:px-6 lg:py-3 col-span-2 md:col-span-1 w-1/2 md:w-full place-self-center"
+      >
         Search
       </Button>
     </form>

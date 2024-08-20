@@ -1,8 +1,8 @@
 "use client";
 
-import { faqs1, faqs2 } from "@/constants";
-import React, { useState } from "react";
+import { useState } from "react";
 import FAQItem from "./featured/faq-item";
+import { faqs1, faqs2 } from "@/constants";
 
 const GeneralInformation = () => {
   const [openIndex1, setOpenIndex1] = useState<number | null>(0);
@@ -18,12 +18,12 @@ const GeneralInformation = () => {
 
   return (
     <div className="px-4 py-12 md:px-12 md:py-24">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold mb-5">
         General Information
       </h2>
 
       <div className="mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-2 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-2 md:gap-4 lg:gap-5">
           <div>
             {faqs1.map((faq, index) => (
               <FAQItem

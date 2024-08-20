@@ -1,6 +1,6 @@
 export const NavLinks: LinkType[] = [
   {
-    name: "Home",
+    name: "HOME",
     link: "/",
     id: 1,
   },
@@ -67,7 +67,7 @@ export const SpotlightEvents: SpotlightEvent[] = [
     date: "December 19",
     title: "Mid-Autumn Festival",
     location: "Milan",
-    id: 5,
+    id: 6,
   },
 ];
 export const faqs1 = [

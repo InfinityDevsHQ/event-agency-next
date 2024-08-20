@@ -1,3 +1,5 @@
+import Footer from "@/components/general/footer";
+import Header from "@/components/general/header";
 import Events from "@/components/homepage/events";
 import FestivalInTheCity from "@/components/homepage/festival-in-the-xity";
 import Gallery from "@/components/homepage/gallery";
@@ -9,6 +11,7 @@ import TopFestivals from "@/components/homepage/top-festivals";
 export default function Home() {
   return (
     <>
+      <Header />
       <Hero />
       <PopularCities />
       <Events />
@@ -16,6 +19,7 @@ export default function Home() {
       <TopFestivals />
       <GeneralInformation />
       <Gallery />
+      <Footer />
     </>
   );
 }

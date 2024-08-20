@@ -4,13 +4,13 @@ import EventCard from "./featured/event-card";
 
 export default function Events() {
   return (
-    <section className="px-4 py-12 md:px-12 md:py-24">
-      <div className="flex flex-col flex-gap gap-4">
-        <div className="flex flex-col gap-2 text-secondary-foreground">
+    <section className="px-4 py-12 md:py-24 md:px-12 lg:px-12 lg:py-24">
+      <div className="flex flex-col flex-gap gap-4 md:gap-5">
+        <div className="flex flex-col gap-2 md:gap-5 text-secondary-foreground">
           <h2 className="font-bold text-4xl md:text-5xl">
             2024 Spotlight Events
           </h2>
-          <p className="font-medium text-lg md:text-2xl">
+          <p className="font-medium text-lg md:text-xl">
             Discover more of the activities with our curated event collections
           </p>
         </div>
@@ -18,7 +18,7 @@ export default function Events() {
           <CarouselContent>
             {SpotlightEvents.map((event) => (
               <CarouselItem
-                className="mx-auto lg:basis-[32%] gap-5"
+                className="mx-auto sm:basis-1/2 lg:basis-1/3 xl:basis-[31%]"
                 key={event.id}
               >
                 <EventCard

@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -39,10 +42,12 @@ const config = {
         primary: {
           DEFAULT: "#F8FAFC",
           foreground: "#94A3B8",
+          background: "#e2e8f0",
         },
         secondary: {
           DEFAULT: "#F59E0B",
           foreground: "#020617",
+          text: "#64748b",
         },
       },
       spacing: {

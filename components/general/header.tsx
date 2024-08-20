@@ -1,43 +1,66 @@
 "use client";
-import { NavLinks } from "@/constants";
 import LogoSvg from "../svgs/logo-svg";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { MenuIcon, XIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { NavLinks } from "@/constants";
+import Link from "next/link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full relative z-50">
+    <header className="mx-auto relative z-30">
       <div
         id="header"
-        className="max-w-screen-2xl h-20 fixed top-0 w-full mx-auto py-5 px-4 md:px-12 flex items-center justify-between"
+        className={`max-w-screen-2xl h-20 fixed top-0 w-screen mx-auto py-5 px-4 md:px-8 lg:px-14 lg:pt-7 lg:pb-5 flex items-center justify-between
+        
+        transition-colors duration-300 ${
+          scrolled ? "bg-secondary bg-opacity-80" : "bg-transparent"
+        }`}
       >
-        <Link href="/">
+        <Link href="/" className="lg:w-[200px] lg:h-[35.89px]">
+          <span className="sr-only">Company Logo</span>
           <LogoSvg />
         </Link>
         <nav>
-          <ol className="hidden md:flex items-center gap-2.5 text-white text-xs font-bold">
+          <ul className="hidden md:flex items-center lg:gap-2.5 text-white text-xs font-bold">
             {NavLinks.map((link) => (
               <li key={link.id} className="relative">
                 <Link
                   href={link.link}
-                  className="inline-block p-2.5 hover:text-secondary transform duration-300 ease-in-out"
+                  className="inline-block p-2.5 hover:text-secondary transform duration-300 ease-in-out relative"
                 >
                   {link.name}
+                  {link.name === "HOME" && (
+                    <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-[95%] h-[6px] w-full bg-secondary -z-10"></div>
+                  )}
                 </Link>
-                {pathname === link.link && (
+                {/* {pathname === link.link && (
                   <div className="absolute w-full h-1.5 bg-secondary bottom-3 -z-10" />
-                )}
+                )} */}
               </li>
             ))}
-          </ol>
+          </ul>
         </nav>
         <Link
           href="/"
-          className="hidden md:block px-6 py-2 bg-secondary rounded-md text-xs font-bold hover:bg-secondary/90 hover:text-white transform duration-300 ease-in-out"
+          className="hidden md:block px-6 py-2 lg:py-3 bg-secondary rounded-md text-xs font-bold hover:bg-secondary/90 hover:text-white transform duration-300 ease-in-out"
         >
           Create Event
         </Link>
@@ -47,17 +70,13 @@ export default function Header() {
           type="button"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? (
-            <XIcon color="white" className="" />
-          ) : (
-            <MenuIcon color="white" className="" />
-          )}
+          {isOpen ? <XIcon color="white" /> : <MenuIcon color="white" />}
         </button>
       </div>
 
       <div
-        className={`w-full pt-6 py-8 bg-black/80 text-white md:hidden h-dvh mt-24 ${
-          isOpen ? "absolute" : "hidden"
+        className={`w-full pt-12 py-8 bg-black/80 text-white md:hidden h-dvh mt-20 z-20 ${
+          isOpen ? "fixed" : "hidden"
         }`}
       >
         <ul className="flex flex-col pl-8 gap-10 justify-between">

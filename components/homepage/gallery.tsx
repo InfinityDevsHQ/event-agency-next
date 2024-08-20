@@ -4,8 +4,8 @@ import React from "react";
 const Gallery = () => {
   return (
     <div className="px-4 py-8 md:py-16 md:px-12 lg:py-24 overflow-hidden">
-      <h2 className="text-5xl font-bold mb-4">Gallery</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-2 md:gap-4 lg:gap-6">
+      <h2 className="text-5xl font-bold mb-5">Gallery</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 place-items-stretch gap-2 md:gap-4 lg:gap-5">
         <Image
           src="/assets/gallery/gallery-1.png"
           className="lg:min-h-[300px] w-full"
@@ -13,7 +13,7 @@ const Gallery = () => {
           width={400}
           height={260}
         />
-        <div className="flex gap-2">
+        <div className="flex gap-2 xl:gap-5 overflow-hidden">
           <Image
             src="/assets/gallery/gallery-2.png"
             className="lg:min-h-[300px] w-full"
@@ -23,7 +23,7 @@ const Gallery = () => {
           />
           <Image
             src="/assets/gallery/gallery-3.png"
-            className="lg:min-h-[300px] w-full"
+            className="lg:min-h-[300px] w-full bg-center"
             alt="gallery image"
             width={400}
             height={260}
