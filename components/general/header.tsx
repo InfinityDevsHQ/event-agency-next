@@ -40,7 +40,7 @@ export default function Header() {
         className={`max-w-screen-2xl h-20 fixed top-0 w-screen mx-auto py-5 px-4 md:px-8 lg:px-14 lg:pt-7 lg:pb-5 flex items-center justify-between
         
         transition-colors duration-300 ${
-          scrolled ? "bg-white bg-opacity-20" : "bg-transparent"
+          scrolled ? "bg-white bg-opacity-40" : "bg-transparent"
         }`}
       >
         <Link href="/" className="lg:w-[200px] lg:h-[35.89px]">
