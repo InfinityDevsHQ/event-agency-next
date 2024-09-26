@@ -1,6 +1,6 @@
 "use client";
 import { Input } from "../ui/input";
-import { Select } from "../ui/select";
+import { Select, SelectContent, SelectItem } from "../ui/select";
 import { SelectTrigger, SelectValue } from "../ui/select";
 import * as React from "react";
 import { format } from "date-fns";
@@ -23,11 +23,21 @@ export default function SearchEvent() {
       <Select>
         <SelectTrigger className="p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground">
           <SelectValue placeholder="Select Category" />
+          <SelectContent>
+            <SelectItem value="Option 1">Mid-Autumn Festival</SelectItem>
+            <SelectItem value="Option 2">Santa Ana Winter Village</SelectItem>
+            <SelectItem value="Option 3">Brew at the Zoo</SelectItem>
+          </SelectContent>
         </SelectTrigger>
       </Select>
       <Select>
         <SelectTrigger className="p-2.5 rounded-md border-primary-foreground font-medium text-xs text-primary-foreground placeholder:font-medium placeholder:text-xs placeholder:text-primary-foreground">
           <SelectValue placeholder="Select Location" />
+          <SelectContent>
+            <SelectItem value="Option 1">Rome</SelectItem>
+            <SelectItem value="Option 2">Milan</SelectItem>
+            <SelectItem value="Option 3">Italy</SelectItem>
+          </SelectContent>
         </SelectTrigger>
       </Select>
       <Popover>
@@ -55,7 +65,7 @@ export default function SearchEvent() {
 
       <Button
         variant={"secondary"}
-        className="text-xs font-bold lg:px-6 lg:py-3 col-span-2 md:col-span-1 w-1/2 md:w-full place-self-center"
+        className="text-xs font-bold lg:px-6 lg:py-3 text-white hover:bg-secondary/90 col-span-2 md:col-span-1 w-1/2 md:w-full place-self-center"
       >
         Search
       </Button>

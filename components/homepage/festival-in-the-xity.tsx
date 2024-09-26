@@ -18,7 +18,7 @@ export default function FestivalInTheCity() {
         <Button
           type="button"
           variant={"secondary"}
-          className="lg:self-end rounded-md font-bold text-xs lg:w-[196px] px-6 py-3"
+          className="lg:self-end text-white hover:bg-secondary/90 rounded-md font-bold text-xs lg:w-[196px] px-6 py-3"
         >
           FIND OUT
         </Button>

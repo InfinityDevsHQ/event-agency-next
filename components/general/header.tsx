@@ -8,6 +8,15 @@ import Link from "next/link";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState<number | null>(null);
+
+  const handleMouseEnter = (id: number) => {
+    setActiveLink(id);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveLink(null);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +40,7 @@ export default function Header() {
         className={`max-w-screen-2xl h-20 fixed top-0 w-screen mx-auto py-5 px-4 md:px-8 lg:px-14 lg:pt-7 lg:pb-5 flex items-center justify-between
         
         transition-colors duration-300 ${
-          scrolled ? "bg-secondary bg-opacity-80" : "bg-transparent"
+          scrolled ? "bg-white bg-opacity-40" : "bg-transparent"
         }`}
       >
         <Link href="/" className="lg:w-[200px] lg:h-[35.89px]">
@@ -41,13 +50,18 @@ export default function Header() {
         <nav>
           <ul className="hidden md:flex items-center lg:gap-2.5 text-white text-xs font-bold">
             {NavLinks.map((link) => (
-              <li key={link.id} className="relative">
+              <li
+                key={link.id}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(link.id)}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Link
                   href={link.link}
-                  className="inline-block p-2.5 hover:text-secondary transform duration-300 ease-in-out relative"
+                  className="inline-block p-2.5 transform duration-300 ease-in-out relative"
                 >
                   {link.name}
-                  {link.name === "HOME" && (
+                  {activeLink === link.id && (
                     <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 translate-y-[95%] h-[6px] w-full bg-secondary -z-10"></div>
                   )}
                 </Link>
@@ -60,7 +74,7 @@ export default function Header() {
         </nav>
         <Link
           href="/"
-          className="hidden md:block px-6 py-2 lg:py-3 bg-secondary rounded-md text-xs font-bold hover:bg-secondary/90 hover:text-white transform duration-300 ease-in-out"
+          className="hidden md:block px-6 py-2 lg:py-3 bg-secondary rounded-md text-xs font-bold hover:bg-secondary/90 text-white transform duration-300 ease-in-out"
         >
           Create Event
         </Link>

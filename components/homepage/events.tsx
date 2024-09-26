@@ -18,7 +18,7 @@ export default function Events() {
           <CarouselContent>
             {SpotlightEvents.map((event) => (
               <CarouselItem
-                className="mx-auto sm:basis-1/2 lg:basis-1/3 xl:basis-[31%]"
+                className="mx-auto sm:basis-1/2 lg:basis-1/3 xl:basis-[31%] prevent-select"
                 key={event.id}
               >
                 <EventCard
